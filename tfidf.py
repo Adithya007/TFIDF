@@ -42,6 +42,7 @@ def text_preprocess(file_name):
         final_list.append(string_replaced.strip().lower())
     return final_list
 
+###full_list_of_folder is the list of all sentences present in the document after preprocesing.
 full_list_of_folder = []
 c = 0
 try:
@@ -82,7 +83,7 @@ for element in full_list_of_folder:
     if len(element) == 0:
         full_list_of_folder.remove(element)
 
-full_list_of_folder
+
 
 documents_df = pd.DataFrame()
 documents_df['documents_cleaned'] = full_list_of_folder
