@@ -12,6 +12,8 @@ import gensim
 model = gensim.models.Word2Vec.load('./bbcmodellower')
 import os
 
+
+##Corresponding folders contain text files.
 folder1 = os.listdir('./bbc 2/business/')
 folder2 = os.listdir('./bbc 2/entertainment')
 folder3 = os.listdir('./bbc 2/politics')
@@ -119,5 +121,4 @@ for i in range(len(document_word_embeddings)):
     for j in range(len(words)):
         document_embeddings[i]+=embedding_matrix[tokenizer.word_index[words[j]]]*tfidf_vectors[i][j]
 print (document_embeddings.shape)
-pairwise_similarities=cosine_similarity(document_embeddings)
-pairwise_differences=euclidean_distances(document_embeddings)
+
