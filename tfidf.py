@@ -113,6 +113,7 @@ for i in range(len(tokenized_paded_documents)):
 tfidfvectoriser=TfidfVectorizer()
 tfidfvectoriser.fit_transform(documents_df.documents_cleaned)
 tfidf_vectors=tfidfvectoriser.transform(documents_df.documents_cleaned)
+tfidf_vectors=tfidf_vectors.toarray()
 
 # calculating average of word vectors of a document weighted by tf-idf
 document_embeddings=np.zeros((len(tokenized_paded_documents),300))
